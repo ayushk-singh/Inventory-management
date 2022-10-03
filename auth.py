@@ -25,20 +25,20 @@ def authentication():
             os.system('pause')
 
     def login():
-        username = input("Enter username: ")
-        pwd = input("Enter password: ")
-        auth = pwd.encode()
-        auth_hash = hashlib.md5(auth).hexdigest()
-        with open("credentials.txt", "r") as f:
-            stored_username, stored_pwd = f.read().split("\n")
-        f.close()
-        if username == stored_username and auth_hash == stored_pwd:
-            print("Logged in Successfully!")
-            code()
-
-        else:
-            print("Login failed! \n")
-            os.system('pause')
+            username = input("Enter username: ")
+            pwd = input("Enter password: ")
+            auth = pwd.encode()
+            auth_hash = hashlib.md5(auth).hexdigest()
+            with open("credentials.txt", "r") as f:
+                stored_username, stored_pwd = f.read().split("\n")
+            f.close()
+            if username == stored_username and auth_hash == stored_pwd:
+                print("Logged in Successfully!")
+                code()
+            else:
+                print("Login failed! \n")
+                os.system('pause')
+        
 
     while 1:
         print("********** Login System **********")
@@ -51,4 +51,5 @@ def authentication():
             login()
         else:
             print("Wrong Choice!")
+            os.system('pause')
 
