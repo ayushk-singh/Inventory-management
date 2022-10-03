@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def addnewitem():
-    print("Add item working")
+    idf = pd.read_csv('./data/item')
 
 
 def searchitem():
