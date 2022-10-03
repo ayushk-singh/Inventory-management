@@ -3,8 +3,13 @@ import numpy as np
 
 
 def code():
-    print("------------------WELCOME TO ADMIN PANEL-------------------------")
-    exit()
+    print("------------------WELCOME TO IMS ADMIN PANEL-------------------------")
+    
+
+
+
+    
+    exit()  #exit() should be in last line
     
 
     
