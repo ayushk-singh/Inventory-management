@@ -1,12 +1,22 @@
+from os import read
+from pickletools import read_decimalnl_short
 import pandas as pd
 import numpy as np
 
 def addnewitem():
     print("Add item working")
-    print()
+    idf = pd.read_csv('./data/item-status.csv')
+    print(idf)
 
 def searchitem():
-    print("search item working")
+    item_name = input("Enter name of item: ")
+    idf = pd.read_csv('./data/item-detail.csv')
+    searchdf = idf.loc[idf["item_name"] == item_name]
+    if searchdf.empty:
+        print("No item with this name")
+    else:
+        print("Item details are: ")
+        print(searchdf)
 
 def removeitem():
     print("remove item working")
