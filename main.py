@@ -4,8 +4,6 @@ import numpy as np
 
 def addnewitem():
     print("Add item working")
-    idf = pd.read_csv('./data/item-status.csv')
-    print(idf)
 
 def searchitem():
     item_name = input("Enter name of item: ")
