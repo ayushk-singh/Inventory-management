@@ -1,4 +1,4 @@
-item_no,item_name,item_cost,category,quantity ,self_number
+item_no,item_name,item_cost,category,quantity ,shelf_number
 12410,Samsung J6 plus,18000,electronics,15,24
 12451,HP notebook ,55000,electronics,10,not available
 12780,Logetech mx,12000,electronics,50,not available
