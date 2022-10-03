@@ -3,7 +3,7 @@ import numpy as np
 
 def addnewitem():
     print("Add item working")
-
+    print()
 
 def searchitem():
     print("search item working")
