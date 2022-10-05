@@ -22,8 +22,8 @@ def removeitem():
     idf_status = pd.read_csv('./data/item-status.csv')
     idf_status = idf_status.drop(idf_status[idf_status["item_id"] == item_id].index)
     idf = idf.drop(idf[idf["item_id"] == item_id].index)
-    idf.to_csv('./data/item-detail.csv', index = FALSE)
-    idf_status.to_csv('./data/item-status.csv', index = FALSE)
+    idf.to_csv('./data/item-detail.csv', index = False)
+    idf_status.to_csv('./data/item-status.csv', index = False)
     print("Item removed successfully")
     print(idf)
 
