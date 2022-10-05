@@ -1,4 +1,5 @@
 from os import read
+from pickle import FALSE
 import pandas as pd
 import numpy as np
 
@@ -16,7 +17,15 @@ def searchitem():
         print(searchdf)
 
 def removeitem():
-    print("remove item working")
+    item_id = int(input("Enter item id: "))
+    idf = pd.read_csv('./data/item-detail.csv')
+    idf_status = pd.read_csv('./data/item-status.csv')
+    idf_status = idf_status.drop(idf_status[idf_status["item_id"] == item_id].index)
+    idf = idf.drop(idf[idf["item_id"] == item_id].index)
+    idf.to_csv('./data/item-detail.csv', index = FALSE)
+    idf_status.to_csv('./data/item-status.csv', index = FALSE)
+    print("Item removed successfully")
+    print(idf)
 
 def showitem():
     print("show item working")
