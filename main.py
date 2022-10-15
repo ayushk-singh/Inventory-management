@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 
+
+
+
 def addnewitem():    
     print("add new item working")
 def additemstatus(): 
@@ -127,6 +130,19 @@ def code():
     print("                    WELCOME TO IMS ADMIN PANEL                ")
     print("--------------------------------------------------------------")
     showmenu()
+    
+    while True:
+        print("--------------------------------------------------")
+        print("Press 1 to run again")
+        print("Press 2 to exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            showmenu()
+        elif choice == 2:
+            exit()
+        else:
+            print("Invalid Selection")
+
     
     
 
