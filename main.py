@@ -1,15 +1,45 @@
-from os import read
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
+from csv import DictWriter
 
 
 
 
-def addnewitem():    
-    print("add new item working")
+def addnewitem():  
+    itemID = int(input("Enter item id: "))
+    itemName = input("Enter item name: ")
+    itemCost = int(input("Enter item cost: "))
+    cat = input("Enter category: ")
+    quantity = int(input("Enter Quantity: "))
+
+    field_names = ['item_id', 'item_name', 'item_cost','category', 'quantity']
+    dict = {'item_id': itemID, 'item_name': itemName, 'item_cost': itemCost,'category': cat, 'quantity': quantity}
+    with open('./data/item-detail.csv', 'a') as f_object:
+        dictwriter_object = DictWriter(f_object, fieldnames=field_names)
+        dictwriter_object.writerow(dict)
+        f_object.close()
+    print("")
+    print("Appended Data Successfully")
+    df = pd.read_csv('./data/item-detail.csv') 
+    print(df)
+
 def additemstatus(): 
-    print("add item status working")
+    itemID = int(input("Enter item id: "))
+    itemName = input("Enter item name: ")
+    itemCost = int(input("Enter item cost: "))
+    staffid = int(input("Enter staff id: "))
+    itemStatus = input("Enter item status: ")
+    field_name = ['item_id', 'item_name', 'item_cost','staff_id','item_status']
+    dict = {'item_id': itemID, 'item_name': itemName, 'item_cost': itemCost,'staff_id': staffid, 'item_status': itemStatus}
+    with open('./data/item-status.csv', 'a') as f_object:
+        dictwriter_object = DictWriter(f_object, fieldnames=field_name)
+        dictwriter_object.writerow(dict)
+        f_object.close()
+    print("")
+    print("Appended Data Successfully")
+    df = pd.read_csv('./data/item-status.csv')
+    print(df)
 
 def searchitem():
     item_name = input("Enter name of item: ")
@@ -38,7 +68,23 @@ def showitem():
 
 
 def addstaff():
-    print("add staff working")
+    staffID = int(input("Enter staff id: "))
+    firstName = input("Enter first name: ")
+    lastName = input("Enter last name: ")
+    post = input("Enter post: ")
+    phone = input("Enter phone number: ")
+    staffScore = int(input("Enter staff score: "))
+    field_name = ['staff_id','first_name','last_name','post','phone_no','staff_score']
+    dict = {'staff_id': staffID, 'first_name': firstName, 'last_name': lastName,'post': post, 'phone_no': phone, 'staff_score': staffScore}
+    with open('./data/staff.csv', 'a') as f_object:
+        dictwriter_object = DictWriter(f_object, fieldnames=field_name)
+        dictwriter_object.writerow(dict)
+        f_object.close()
+    print("")
+    print("Appended Data Successfully")
+    df = pd.read_csv('./data/staff.csv')
+    print(df)
+
 
 def searchstaff():
     staffid = int(input('Enter staff id: '))
